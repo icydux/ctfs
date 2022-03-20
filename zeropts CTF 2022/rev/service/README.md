@@ -4,7 +4,7 @@ The first thing that I did, was to run the executable. It asks for a flag(input)
 
 ![Screenshot](screenshots/console.PNG)
 
-Next, I loaded the executable to ``Cutter`` and identified the offset that the input is read based on the ``ReadConsoleA`` function.
+Next, I loaded the executable with ``Cutter`` and identified the offset that the input is read based on the ``ReadConsoleA`` symbol.
 
 ![Screenshot](screenshots/main.PNG)
 
