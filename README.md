@@ -1,3 +1,3 @@
-# ctfs
+# Capture the Flag (CTF) competitions
 
-Writeups
+Writeups for CTFs
