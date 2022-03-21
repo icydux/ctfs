@@ -76,3 +76,4 @@ print (flag)
 
 # References
 https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/
+https://docs.microsoft.com/en-us/windows/win32/debug/pe-format#the-idata-section
