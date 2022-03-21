@@ -30,5 +30,10 @@ After following the imported address of the ``CreateServiceA``, it was pointing 
 
 ![Screenshot](screenshots/import_table_injection.PNG)
 
-Now it made sense. The binary splits our input to a set of 2 bytes and then calculates its SHA256 hash. Afterwards, the estimated SHA256 hashes are compared to harcoded hashes that are stored in the ``.data`` section. Our goal was to find the desired set of bytes that match the hardcoded SHA256 hashes. I wrote the python script ``solver.py`` to brute force the possible bytes that match the desired hashes and found the flag.
+Now it made sense. The binary splits our input to a set of 2 bytes. For each set of bytes, a SHA256 hash object is created with ``CryptCreateHash``. It should be mentioned that the algorithm is specified with ``ALG_ID`` field (0x800c->SHA256). Then, the SHA 256 hash is estimated with the ``CryptGetHashParam``. Afterwards, the estimated SHA256 hashes are compared to the harcoded hashes that are stored in the ``.data`` section.
 
+Our goal was to find the desired set of bytes where their SHA256 hashes match the hardcoded SHA256 hashes. I wrote the python script ``solver.py`` to brute force the possible bytes that match the desired hashes and found the flag.
+
+
+# References
+https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/
