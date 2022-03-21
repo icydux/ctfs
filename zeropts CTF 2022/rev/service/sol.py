@@ -3,11 +3,10 @@ from wincrypto.constants import CALG_SHA_256
 import binascii
 import struct
 
-flag = b''
 
-def brute_force(possible,hash):
+def brute_force(bb,hash):
 	hasher = CryptCreateHash(CALG_SHA_256)
-	CryptHashData(hasher,possible)
+	CryptHashData(hasher,bb)
 	if hasher.get_hash_val() == hash :
 		return True
 	else:
@@ -16,6 +15,7 @@ def brute_force(possible,hash):
 f = open(".data","r")
 data = f.read()
 hashes = []
+flag = b''
 
 while data:
 	hashes.append(data[:64])
@@ -23,11 +23,11 @@ while data:
 del hashes[-1]
 
 for i,hash in enumerate(hashes):
-	target = binascii.unhexlify(hash)
+	target_hash = binascii.unhexlify(hash)
 	for v in range(0xffff):
-		possible = struct.pack("h",v)
-		if brute_force(possible,target):
-			flag += possible
+		bb = struct.pack("h",v)
+		if brute_force(bb,target_hash):
+			flag += bb
 			break
 print (flag)
 
