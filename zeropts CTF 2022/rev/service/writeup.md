@@ -71,6 +71,7 @@ for i,hash in enumerate(hashes):
 			flag += bb
 			break
 print (flag)
+```b'zer0pts{m0d1fy1ng_PE_1mp0rts_1s_4n_34sy_0bfusc4t10n}\r\n\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'```
 ```
 
 # References
