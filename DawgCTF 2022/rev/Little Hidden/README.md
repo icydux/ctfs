@@ -7,7 +7,7 @@ We are given a ``PE32 executable (console)`` file.
 
 Firstly, the excutable was ran and the below message box appeared.
 
-![Screenshot](screenshots/console.PNG)
+![Screenshot](screenshots/execution.PNG)
 
 The main function of the executable calls the function ``0x4015b8`` and examines whether the return value ise equtal to zero or one. In each case, the the process terminates. 
 
